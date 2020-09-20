@@ -1,27 +1,27 @@
 package com.twu.refactoring;
 
 public class DateParserCondition {
-    Integer start;
+    private Integer start;
 
-    Integer end;
+    private Integer end;
 
-    String stringIndexOutOfBoundsException;
+    private String stringIndexOutOfBoundsException;
 
-    String numberFormatException;
+    private String numberFormatException;
 
-    Integer max;
+    private Integer max;
 
-    Integer min;
+    private Integer min;
 
-    String illegalArgumentException;
+    private String illegalArgumentException;
 
-    public DateParserCondition(Integer start, Integer end, String stringIndexOutOfBoundsException, String numberFormatException, Integer max, Integer min, String illegalArgumentException) {
+    public DateParserCondition(Integer start, Integer end, String stringIndexOutOfBoundsException, String numberFormatException, Integer min, Integer max, String illegalArgumentException) {
         this.start = start;
         this.end = end;
         this.stringIndexOutOfBoundsException = stringIndexOutOfBoundsException;
         this.numberFormatException = numberFormatException;
-        this.max = max;
         this.min = min;
+        this.max = max;
         this.illegalArgumentException = illegalArgumentException;
     }
 

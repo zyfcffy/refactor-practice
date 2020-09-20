@@ -1,11 +1,22 @@
 package com.twu.refactoring;
 
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class Direction {
     private final char direction;
 
     public Direction(char direction) {
         this.direction = direction;
     }
+
+    private final Map<Character, Character> turnRight = new HashMap<>();
+
+    private final Map<Character, Character> turnLeft = new HashMap<>();
+
+    
+
 
     public Direction turnRight() {
         switch (direction) {

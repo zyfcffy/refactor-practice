@@ -51,7 +51,7 @@ public class DateParser {
     private int getTime(DateParserCondition dateParserCondition) {
         int time;
         try {
-            String yearString = dateAndTimeString.substring(dateParserCondition.start, dateParserCondition.end);
+            String yearString = dateAndTimeString.substring(dateParserCondition.getStart(), dateParserCondition.getEnd());
             time = Integer.parseInt(yearString);
         } catch (StringIndexOutOfBoundsException e) {
             throw new IllegalArgumentException(dateParserCondition.getStringIndexOutOfBoundsException());
