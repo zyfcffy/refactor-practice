@@ -7,45 +7,35 @@ import java.util.Map;
 public class Direction {
     private final char direction;
 
-    public Direction(char direction) {
-        this.direction = direction;
-    }
-
     private final Map<Character, Character> turnRight = new HashMap<>();
 
     private final Map<Character, Character> turnLeft = new HashMap<>();
 
-    
+    public Direction(char direction) {
+        this.direction = direction;
+        right.put('N', 'E');
+        right.put('S', 'W');
+        right.put('E', 'N');
+        right.put('W', 'S');
 
+        left.put('N', 'W');
+        left.put('S', 'E');
+        left.put('E', 'N');
+        left.put('W', 'S');
+    }
 
     public Direction turnRight() {
-        switch (direction) {
-            case 'N':
-                return new Direction('E');
-            case 'S':
-                return new Direction('W');
-            case 'E':
-                return new Direction('N');
-            case 'W':
-                return new Direction('S');
-            default:
-                throw new IllegalArgumentException();
+        if (!right.containsKey(direction)) {
+            throw new IllegalArgumentException();
         }
+        return new Direction(right.get(direction));
     }
 
     public Direction turnLeft() {
-        switch (direction) {
-            case 'N':
-                return new Direction('W');
-            case 'S':
-                return new Direction('E');
-            case 'E':
-                return new Direction('N');
-            case 'W':
-                return new Direction('S');
-            default:
-                throw new IllegalArgumentException();
+        if (!left.containsKey(direction)) {
+            throw new IllegalArgumentException();
         }
+        return new Direction(left.get(direction));
     }
 
     @Override
